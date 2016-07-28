@@ -2,8 +2,8 @@
 A simple fully customizable alert controller
 
 # Setup
-Copy the "MIAlertController" folder to your project.
-Create a new instance with just a line of code
+- Copy the "MIAlertController" folder to your project.
+- Create a new instance with just a line of code
 
 ```
 MIAlertController(
