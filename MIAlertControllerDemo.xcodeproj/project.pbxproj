@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF21D33C9260034530E /* AppDelegate.swift */; };
+		ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF41D33C9260034530E /* ViewController.swift */; };
+		ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3BF61D33C9260034530E /* Main.storyboard */; };
+		ACAE3BFA1D33C9260034530E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3BF91D33C9260034530E /* Assets.xcassets */; };
+		ACAE3BFD1D33C9260034530E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3BFB1D33C9260034530E /* LaunchScreen.storyboard */; };
+		ACAE3C071D33C9620034530E /* MIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3C051D33C9620034530E /* MIAlertController.swift */; };
+		ACAE3C081D33C9620034530E /* MIAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3C061D33C9620034530E /* MIAlertController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACAE3BF21D33C9260034530E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACAE3BF41D33C9260034530E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACAE3BF71D33C9260034530E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACAE3BF91D33C9260034530E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACAE3BFC1D33C9260034530E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACAE3BFE1D33C9260034530E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACAE3C051D33C9620034530E /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIAlertController.swift; sourceTree = "<group>"; };
+		ACAE3C061D33C9620034530E /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIAlertController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACAE3BEC1D33C9260034530E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACAE3BE61D33C9260034530E = {
+			isa = PBXGroup;
+			children = (
+				ACAE3BF11D33C9260034530E /* MIAlertControllerDemo */,
+				ACAE3BF01D33C9260034530E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACAE3BF01D33C9260034530E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACAE3BF11D33C9260034530E /* MIAlertControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE3BFE1D33C9260034530E /* Info.plist */,
+				ACAE3BF21D33C9260034530E /* AppDelegate.swift */,
+				ACAE3BF41D33C9260034530E /* ViewController.swift */,
+				ACAE3BF91D33C9260034530E /* Assets.xcassets */,
+				ACAE3BFB1D33C9260034530E /* LaunchScreen.storyboard */,
+				ACAE3BF61D33C9260034530E /* Main.storyboard */,
+				ACAE3C041D33C9620034530E /* MIAlertController */,
+			);
+			path = MIAlertControllerDemo;
+			sourceTree = "<group>";
+		};
+		ACAE3C041D33C9620034530E /* MIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE3C051D33C9620034530E /* MIAlertController.swift */,
+				ACAE3C061D33C9620034530E /* MIAlertController.xib */,
+			);
+			path = MIAlertController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACAE3BEE1D33C9260034530E /* MIAlertControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACAE3C011D33C9260034530E /* Build configuration list for PBXNativeTarget "MIAlertControllerDemo" */;
+			buildPhases = (
+				ACAE3BEB1D33C9260034530E /* Sources */,
+				ACAE3BEC1D33C9260034530E /* Frameworks */,
+				ACAE3BED1D33C9260034530E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIAlertControllerDemo;
+			productName = MIAlertControllerDemo;
+			productReference = ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACAE3BE71D33C9260034530E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Mario Iannotta";
+				TargetAttributes = {
+					ACAE3BEE1D33C9260034530E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = ACAE3BEA1D33C9260034530E /* Build configuration list for PBXProject "MIAlertControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACAE3BE61D33C9260034530E;
+			productRefGroup = ACAE3BF01D33C9260034530E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACAE3BEE1D33C9260034530E /* MIAlertControllerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACAE3BED1D33C9260034530E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAE3C081D33C9620034530E /* MIAlertController.xib in Resources */,
+				ACAE3BFD1D33C9260034530E /* LaunchScreen.storyboard in Resources */,
+				ACAE3BFA1D33C9260034530E /* Assets.xcassets in Resources */,
+				ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACAE3BEB1D33C9260034530E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAE3C071D33C9620034530E /* MIAlertController.swift in Sources */,
+				ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */,
+				ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACAE3BF61D33C9260034530E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACAE3BF71D33C9260034530E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACAE3BFB1D33C9260034530E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACAE3BFC1D33C9260034530E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACAE3BFF1D33C9260034530E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACAE3C001D33C9260034530E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACAE3C021D33C9260034530E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MIAlertControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marioiannotta.MIAlertControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ACAE3C031D33C9260034530E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MIAlertControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marioiannotta.MIAlertControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACAE3BEA1D33C9260034530E /* Build configuration list for PBXProject "MIAlertControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACAE3BFF1D33C9260034530E /* Debug */,
+				ACAE3C001D33C9260034530E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACAE3C011D33C9260034530E /* Build configuration list for PBXNativeTarget "MIAlertControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACAE3C021D33C9260034530E /* Debug */,
+				ACAE3C031D33C9260034530E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACAE3BE71D33C9260034530E /* Project object */;
+}

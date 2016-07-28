@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-lX-hAQ">
+                                <rect key="frame" x="119" y="250" width="363" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A lightweight, fully customizable alert controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otb-3f-XNe">
+                                        <rect key="frame" x="0.0" y="50" width="363" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sv5-uB-Oiw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIAlertController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="UNY-IA-7Pt">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0XZ-da-Yva"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="otb-3f-XNe" firstAttribute="top" secondItem="UNY-IA-7Pt" secondAttribute="bottom" constant="10" id="7iT-rU-KaN"/>
+                                    <constraint firstItem="otb-3f-XNe" firstAttribute="leading" secondItem="v2m-lX-hAQ" secondAttribute="leading" id="LrE-gA-UtP"/>
+                                    <constraint firstAttribute="trailing" secondItem="otb-3f-XNe" secondAttribute="trailing" id="MEJ-IY-eUh"/>
+                                    <constraint firstItem="UNY-IA-7Pt" firstAttribute="top" secondItem="v2m-lX-hAQ" secondAttribute="top" id="N3h-pV-VIW"/>
+                                    <constraint firstItem="UNY-IA-7Pt" firstAttribute="leading" secondItem="v2m-lX-hAQ" secondAttribute="leading" id="e04-82-Hxs"/>
+                                    <constraint firstAttribute="bottom" secondItem="otb-3f-XNe" secondAttribute="bottom" id="pIX-Tr-26n"/>
+                                    <constraint firstAttribute="trailing" secondItem="UNY-IA-7Pt" secondAttribute="trailing" id="xu7-L9-aGu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="v2m-lX-hAQ" secondAttribute="trailing" constant="20" id="6yr-pC-Vnh"/>
+                            <constraint firstItem="v2m-lX-hAQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NtE-eJ-SqA"/>
+                            <constraint firstItem="v2m-lX-hAQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TB9-c3-gF1"/>
+                            <constraint firstItem="v2m-lX-hAQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="TSR-eY-zpi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>

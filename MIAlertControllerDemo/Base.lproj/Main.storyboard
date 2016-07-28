@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MIAlertControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-wp-LL5">
+                                <rect key="frame" x="225" y="245" width="151" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYd-L9-Jtm">
+                                        <rect key="frame" x="0.0" y="0.0" width="151" height="30"/>
+                                        <state key="normal" title="Show the default alert"/>
+                                        <connections>
+                                            <action selector="showDefaultAlertController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V6e-5L-avo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-95-d7K">
+                                        <rect key="frame" x="0.0" y="40" width="151" height="30"/>
+                                        <state key="normal" title="Show a custom alert"/>
+                                        <connections>
+                                            <action selector="showCustomAlertController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6sm-Wj-t4I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hQ-tC-qQd">
+                                        <rect key="frame" x="0.0" y="80" width="151" height="30"/>
+                                        <state key="normal" title="Show a googlish alert"/>
+                                        <connections>
+                                            <action selector="showGooglishAlertController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRE-oj-cln"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kLP-95-d7K" secondAttribute="bottom" id="06I-LR-xl5"/>
+                                    <constraint firstItem="pYd-L9-Jtm" firstAttribute="leading" secondItem="Pjb-wp-LL5" secondAttribute="leading" id="1th-89-q4f"/>
+                                    <constraint firstItem="kLP-95-d7K" firstAttribute="top" secondItem="pYd-L9-Jtm" secondAttribute="bottom" constant="10" id="4v6-uc-BAu"/>
+                                    <constraint firstItem="kLP-95-d7K" firstAttribute="leading" secondItem="Pjb-wp-LL5" secondAttribute="leading" id="C8e-5n-aOq"/>
+                                    <constraint firstAttribute="trailing" secondItem="kLP-95-d7K" secondAttribute="trailing" id="KDF-eN-80Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="7hQ-tC-qQd" secondAttribute="bottom" id="Nig-Li-Dan"/>
+                                    <constraint firstItem="7hQ-tC-qQd" firstAttribute="top" secondItem="kLP-95-d7K" secondAttribute="bottom" constant="10" id="S4u-yQ-po4"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hQ-tC-qQd" secondAttribute="trailing" id="TAf-N5-jUt"/>
+                                    <constraint firstAttribute="trailing" secondItem="pYd-L9-Jtm" secondAttribute="trailing" id="Urx-wJ-bqt"/>
+                                    <constraint firstItem="7hQ-tC-qQd" firstAttribute="leading" secondItem="Pjb-wp-LL5" secondAttribute="leading" id="Vkh-tW-PPZ"/>
+                                    <constraint firstItem="pYd-L9-Jtm" firstAttribute="top" secondItem="Pjb-wp-LL5" secondAttribute="top" id="XRD-dw-FdY"/>
+                                    <constraint firstItem="kLP-95-d7K" firstAttribute="top" secondItem="7hQ-tC-qQd" secondAttribute="bottom" id="xu8-Up-ngT"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="06I-LR-xl5"/>
+                                        <exclude reference="xu8-Up-ngT"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pjb-wp-LL5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0hj-mq-x1e"/>
+                            <constraint firstItem="Pjb-wp-LL5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uad-Wa-Urj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
