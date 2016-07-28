@@ -93,8 +93,7 @@ class ViewController: UIViewController {
                 
                 print("button \(buttonIndex) tapped")
                 
-            }
-        )
+            })
         
     }
     @IBAction func showCustomAlertController(sender: AnyObject) {
@@ -114,8 +113,7 @@ class ViewController: UIViewController {
                 
                 print("button \(buttonIndex) tapped")
                 
-            }
-        )
+            })
         
     }
     @IBAction func showGooglishAlertController(sender: AnyObject) {
@@ -134,8 +132,7 @@ class ViewController: UIViewController {
                 
                 print("button \(buttonIndex) tapped")
                 
-            }
-        )
+            })
         
     }
 
