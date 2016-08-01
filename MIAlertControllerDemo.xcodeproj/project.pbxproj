@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC2B82711D4F37950077B5CE /* MIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B826F1D4F37950077B5CE /* MIAlertController.swift */; };
-		AC2B82721D4F37950077B5CE /* MIAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2B82701D4F37950077B5CE /* MIAlertController.xib */; };
+		AC2B82761D4F3B720077B5CE /* MIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B82741D4F3B720077B5CE /* MIAlertController.swift */; };
+		AC2B82771D4F3B720077B5CE /* MIAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2B82751D4F3B720077B5CE /* MIAlertController.xib */; };
 		ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF21D33C9260034530E /* AppDelegate.swift */; };
 		ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF41D33C9260034530E /* ViewController.swift */; };
 		ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3BF61D33C9260034530E /* Main.storyboard */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC2B826F1D4F37950077B5CE /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIAlertController.swift; path = MIAlertController/MIAlertController.swift; sourceTree = "<group>"; };
-		AC2B82701D4F37950077B5CE /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MIAlertController.xib; path = MIAlertController/MIAlertController.xib; sourceTree = "<group>"; };
+		AC2B82741D4F3B720077B5CE /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIAlertController.swift; sourceTree = "<group>"; };
+		AC2B82751D4F3B720077B5CE /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIAlertController.xib; sourceTree = "<group>"; };
 		ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE3BF21D33C9260034530E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAE3BF41D33C9260034530E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,11 +39,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC2B826E1D4F37950077B5CE /* MIAlertController */ = {
+		AC2B82731D4F3B720077B5CE /* MIAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				AC2B826F1D4F37950077B5CE /* MIAlertController.swift */,
-				AC2B82701D4F37950077B5CE /* MIAlertController.xib */,
+				AC2B82741D4F3B720077B5CE /* MIAlertController.swift */,
+				AC2B82751D4F3B720077B5CE /* MIAlertController.xib */,
 			);
 			path = MIAlertController;
 			sourceTree = "<group>";
@@ -51,6 +51,7 @@
 		ACAE3BE61D33C9260034530E = {
 			isa = PBXGroup;
 			children = (
+				AC2B82731D4F3B720077B5CE /* MIAlertController */,
 				ACAE3BF11D33C9260034530E /* MIAlertControllerDemo */,
 				ACAE3BF01D33C9260034530E /* Products */,
 			);
@@ -73,7 +74,6 @@
 				ACAE3BF91D33C9260034530E /* Assets.xcassets */,
 				ACAE3BFB1D33C9260034530E /* LaunchScreen.storyboard */,
 				ACAE3BF61D33C9260034530E /* Main.storyboard */,
-				AC2B826E1D4F37950077B5CE /* MIAlertController */,
 			);
 			path = MIAlertControllerDemo;
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2B82721D4F37950077B5CE /* MIAlertController.xib in Resources */,
+				AC2B82771D4F3B720077B5CE /* MIAlertController.xib in Resources */,
 				ACAE3BFD1D33C9260034530E /* LaunchScreen.storyboard in Resources */,
 				ACAE3BFA1D33C9260034530E /* Assets.xcassets in Resources */,
 				ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */,
@@ -150,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2B82711D4F37950077B5CE /* MIAlertController.swift in Sources */,
+				AC2B82761D4F3B720077B5CE /* MIAlertController.swift in Sources */,
 				ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */,
 				ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */,
 			);
