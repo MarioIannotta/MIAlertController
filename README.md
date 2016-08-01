@@ -22,8 +22,32 @@ MIAlertController(
 })
 ```
 # Customization
-- You can customize the alert's behavior and UI by creating a new instance of the struct MIAlertController.Config and changing it's property as you like
+- You can customize the alert's behavior and UI by creating a new instance of the struct MIAlertController.Config and changing it's property as you like 
+  - config.dismissOnTouchOutsideEnabled -> It allows the user to dismiss the alert by tapping anywhere outside it
+  - config.backgroundColor -> Overlay layer background
+  - config.alertViewBackgroundColor -> Alert background
+  - config.alertViewCornerRadius -> Alert corner radius
+  - config.alertMarginSize -> The max margins between the alert and the screen
+  - config.separatorColor -> The color of separator between the buttons
+  - config.alertViewMaxSize -> The max size of the alert
+  - config.titleLabelFont -> the font of the title
+  - config.titleLabelTextColor -> the color of the title
+  - config.titleLabelTextAlignment -> the text alignment of the title
+  - config.messageLabelFont -> the font of the message
+  - config.messageLabelTextColor -> the color of the message
+  - config.messageLabelTextAlignment -> the text alignment of the message
+  - config.messageVerticalSpaceFromTitle -> the space from title of the message
+  - config.buttonBackgroundView -> the background color of the view who contains the buttons
+  - config.firstButtonRatio -> the ratio between the width of the buttons container and the width of the first button; Only available with two buttons
 - There are three type of buttons (.Default, .Destructive, .Cancel) with different UI but you can create a new type by using the struct MIAlertController.Button.Config
+  - config.font -> the font of the button
+  - config.textColor -> the color of the button's text
+  - config.textAlignment -> the alignment of the button's text
+  - config.backgroundColor -> the background color of the button
+  - config.buttonHeight -> the height of the button
+  - config.contentEdgeOffset -> the edge offset of the button
+
+# Example
 ```
 // Alert UI and behavior
 var googlishAlertControllerConfig = MIAlertController.Config()
