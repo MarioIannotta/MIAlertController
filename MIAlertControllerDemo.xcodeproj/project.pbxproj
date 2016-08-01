@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC2B826F1D4F37950077B5CE /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIAlertController.swift; path = ../../MIAlertController/MIAlertController.swift; sourceTree = "<group>"; };
-		AC2B82701D4F37950077B5CE /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MIAlertController.xib; path = ../../MIAlertController/MIAlertController.xib; sourceTree = "<group>"; };
+		AC2B826F1D4F37950077B5CE /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIAlertController.swift; path = MIAlertController/MIAlertController.swift; sourceTree = "<group>"; };
+		AC2B82701D4F37950077B5CE /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MIAlertController.xib; path = MIAlertController/MIAlertController.xib; sourceTree = "<group>"; };
 		ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE3BF21D33C9260034530E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAE3BF41D33C9260034530E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
