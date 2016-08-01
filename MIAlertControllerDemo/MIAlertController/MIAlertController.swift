@@ -39,7 +39,6 @@ class MIAlertController: UIViewController {
         var messageVerticalSpaceFromTitle: CGFloat = 10
         
         // Buttons
-        var separatorsBetweenButtons = UIColor.clearColor()
         var buttonBackgroundView = UIColor.whiteColor()
         var firstButtonRatio: CGFloat = 0.5 // Only available with two buttons; ratio between the width of the buttons container and the width of the first button
         

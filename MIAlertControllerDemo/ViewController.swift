@@ -70,7 +70,6 @@ class ViewController: UIViewController {
         customAlertControllerConfig.messageLabelTextAlignment = NSTextAlignment.Left
         
         customAlertControllerConfig.buttonBackgroundView = UIColor(white: 0.98, alpha: 1)
-        customAlertControllerConfig.separatorsBetweenButtons = UIColor.whiteColor()
         
         customAlertControllerConfig.separatorColor = UIColor(white: 0.9, alpha: 1)
         customAlertControllerConfig.alertViewMaxSize = CGSize(width: 300, height: 500)
