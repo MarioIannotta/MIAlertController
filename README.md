@@ -1,6 +1,8 @@
 # MIAlertController
 A simple fully customizable alert controller
 
+<img src="demo.gif" height="500"/>
+
 # Setup
 - Copy the "MIAlertController" folder to your project.
 - Create a new instance with just a line of code
@@ -96,8 +98,6 @@ MIAlertController(
 ```
 #Demo
 In this repository you can also find a demo.
-
-<img src="demo.gif" height="500"/>
 
 # Info
 If you like this git you can follow me here or on twitter :) [@MarioIannotta](http://www.twitter.com/marioiannotta)
