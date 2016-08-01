@@ -26,9 +26,6 @@ class MIAlertController: UIViewController {
         var alertMarginSize = CGSize(width: 40, height: 30)
         var separatorColor = UIColor.clearColor()
         var alertViewMaxSize = CGSize(width: 300, height: 300)
-        var alertViewShadowOffset = CGSize(width: 0, height: 0)
-        var alertViewShadowRadius: CGFloat = 20
-        var alertViewShadowOpacity: Float = 0.5
         
         // Title
         var titleLabelFont = UIFont.boldSystemFontOfSize(19)
@@ -36,13 +33,13 @@ class MIAlertController: UIViewController {
         var titleLabelTextAlignment = NSTextAlignment.Center
         
         // Message
-        var messageLabelFont = UIFont.systemFontOfSize(16)
+        var messageLabelFont = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
         var messageLabelTextColor = UIColor.blackColor()
         var messageLabelTextAlignment = NSTextAlignment.Center
         var messageVerticalSpaceFromTitle: CGFloat = 10
         
         // Buttons
-        var buttonBackgroundView = UIColor.clearColor()
+        var buttonBackgroundView = UIColor.whiteColor()
         var firstButtonRatio: CGFloat = 0.5 // Only available with two buttons; ratio between the width of the buttons container and the width of the first button
         
     }
@@ -51,11 +48,12 @@ class MIAlertController: UIViewController {
         
         struct Config {
             
-            var font = UIFont.boldSystemFontOfSize(16)
+            var font = UIFont.boldSystemFontOfSize(15)
             var textColor = UIColor.blackColor()
             var textAlignment = UIControlContentHorizontalAlignment.Center
             var backgroundColor = UIColor.clearColor()
             var buttonHeight: CGFloat = 60
+            var contentEdgeOffset = UIEdgeInsetsZero
             
         }
         
@@ -76,7 +74,8 @@ class MIAlertController: UIViewController {
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
                         textAlignment: .Center,
                         backgroundColor: UIColor.clearColor(),
-                        buttonHeight: 60
+                        buttonHeight: 60,
+                        contentEdgeOffset: UIEdgeInsetsZero
                     )
                     
                 case .Destructive:
@@ -86,7 +85,8 @@ class MIAlertController: UIViewController {
                         textColor: UIColor(red: 218/255.0, green: 75/255.0, blue: 56/255.0, alpha: 1),
                         textAlignment: .Center,
                         backgroundColor: UIColor.clearColor(),
-                        buttonHeight: 60
+                        buttonHeight: 60,
+                        contentEdgeOffset: UIEdgeInsetsZero
                     )
                     
                 case Cancel:
@@ -96,7 +96,8 @@ class MIAlertController: UIViewController {
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
                         textAlignment: .Center,
                         backgroundColor: UIColor.clearColor(),
-                        buttonHeight: 60
+                        buttonHeight: 60,
+                        contentEdgeOffset: UIEdgeInsetsZero
                     )
                     
                 }
@@ -121,12 +122,14 @@ class MIAlertController: UIViewController {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: config.buttonHeight))
             
             button.setTitle(title, forState: .Normal)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.titleLabel?.minimumScaleFactor = 0.7
             button.setTitleColor(config.textColor, forState: .Normal)
             button.titleLabel?.font = config.font
             button.backgroundColor = config.backgroundColor
             button.contentHorizontalAlignment = config.textAlignment
             
-            button.contentEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20)
+            button.contentEdgeInsets = config.contentEdgeOffset
             
             button.translatesAutoresizingMaskIntoConstraints = false
             
@@ -186,7 +189,7 @@ class MIAlertController: UIViewController {
         
     }
     
-    func presentOn(parentVC: UIViewController, buttonTapped: ButtonTappedClosure? = nil) {
+    func presentOn(parentVC: UIViewController, buttonTapped: ButtonTappedClosure?) {
         
         buttonTappedClosure = buttonTapped
         
@@ -227,14 +230,6 @@ class MIAlertController: UIViewController {
         alertViewWidthConstraint.constant = config.alertViewMaxSize.width
         alertViewHeightConstraint.constant = config.alertViewMaxSize.height
         
-        // Shadow
-        alertBackgroundView.layer.masksToBounds = false
-        alertBackgroundView.layer.shadowOffset = config.alertViewShadowOffset
-        alertBackgroundView.layer.shadowRadius = config.alertViewShadowRadius
-        alertBackgroundView.layer.shadowOpacity = config.alertViewShadowOpacity
-        
-        buttonsBackgroundView.layer.cornerRadius = config.alertViewCornerRadius
-        
     }
     private func setupTitleLabelUI() {
         
@@ -261,8 +256,6 @@ class MIAlertController: UIViewController {
         } else if buttonsList.count == 1 {
             
             let firstButton = buttonsList[0]
-            
-            addSeparatorTo(firstButton, separators: (top: true, right: false))
             
             buttonsBackgroundViewHeightConstraint.constant = firstButton.frame.height
             
@@ -417,10 +410,9 @@ class MIAlertController: UIViewController {
     }
     
     @objc private func buttonTapped(button: UIButton) {
-        
-        dismissViewControllerAnimated(true) { [weak self] in
-            self?.buttonTappedClosure?(buttonIndex: button.tag)
-        }
+
+        buttonTappedClosure?(buttonIndex: button.tag)
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -435,7 +427,6 @@ class MIAlertController: UIViewController {
         
         setupUI()
         setupBehavior()
-        
 
     }
     override func didReceiveMemoryWarning() {
@@ -483,7 +474,7 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
         
     }
     
-    // Sortcut
+    // Shortcut
     func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
         
         guard
