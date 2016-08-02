@@ -436,7 +436,9 @@ class MIAlertController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func dismissAction(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if config.dismissOnTouchOutsideEnabled {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 }
