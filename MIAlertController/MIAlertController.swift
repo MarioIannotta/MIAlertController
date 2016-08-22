@@ -346,13 +346,6 @@ class MIAlertController: UIViewController {
         
     }
     
-    // MARK: - Behavior Setup
-    private func setupBehavior() {
-        
-        dismissOnTapGestureRecognizer.enabled = config.dismissOnTouchOutsideEnabled
-        
-    }
-    
     // MARK: - Buttons stuff
     private func createButtons(buttons: [Button]?) {
      
@@ -445,7 +438,6 @@ class MIAlertController: UIViewController {
         createButtons(alertButtons)
         
         setupUI()
-        setupBehavior()
 
     }
     
