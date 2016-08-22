@@ -13,15 +13,15 @@ MIAlertController(
   title: "Your alert title",
   message: "Your alert description",
   buttons: [
-    MIAlertController.Button(title: "Button one"),
-    MIAlertController.Button(title: "Button two")
+    MIAlertController.Button(title: "Button one", action: {
+      print("button one tapped")
+    }),
+    MIAlertController.Button(title: "Button two", action: {
+      print("button two apped
+    })
   ]
 
-).presentOn(self, buttonTapped: { (buttonIndex) in
-  
-  print("button \(buttonIndex) tapped")
-
-})
+).presentOn(self)
 ```
 # Customization
 - You can customize the alert's behavior and UI by creating a new instance of the struct MIAlertController.Config and changing it's property as you like 
@@ -79,21 +79,25 @@ var googlishAlertControllerRightButtonConfig = MIAlertController.Button.Config()
 googlishAlertControllerRightButtonConfig.textColor = UIColor(red: 19/255.0, green: 152/255.0, blue: 138/255.0, alpha: 1)
 googlishAlertControllerRightButtonConfig.font = UIFont.boldSystemFontOfSize(15)
 
-MIAlertController(
-
+let alertController = MIAlertController(
   title: "I'm a googlish alert!",
-  message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna   aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-  buttons: [
-    MIAlertController.Button(title: "COOL", config: googlishAlertControllerLeftButtonConfig),
-    MIAlertController.Button(title: "OK", config: googlishAlertControllerRightButtonConfig)
-  ],
+  message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   config: googlishAlertControllerConfig
+)
 
-).presentOn(self, buttonTapped: { (buttonIndex) in
+alertController.addButton(
+  MIAlertController.Button(title: "COOL", config: googlishAlertControllerLeftButtonConfig, action: {
+    print("cool tapped")
+  })
+)
 
-  print("button \(buttonIndex) tapped")
+alertController.addButton(
+  MIAlertController.Button(title: "OK", config: googlishAlertControllerRightButtonConfig, action: {
+    print("ok tapped")
+  })
+)
 
-})
+alertController.presentOn(self)
 
 ```
 #Demo
