@@ -79,20 +79,22 @@ class ViewController: UIViewController {
     // Mark: - IBActions
     @IBAction func showDefaultAlertController(sender: AnyObject) {
         
-        MIAlertController(
-            
+        let alertController = MIAlertController(
             title: "I'm a default alert, am I cute?",
-            message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-            buttons: [
-                MIAlertController.Button(title: "Yep"),
-                MIAlertController.Button(title: "Nope", type: .Destructive)
-            ]
-            
-            ).presentOn(self, buttonTapped: { (buttonIndex) in
-                
-                print("button \(buttonIndex) tapped")
-                
+            message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+        )
+        
+        alertController.addButton(
+            MIAlertController.Button(title: "Yep")
+        )
+        
+        alertController.addButton(
+            MIAlertController.Button(title: "Nope", type: .Destructive, action: {
+                print("nope tapped")
             })
+        )
+        
+        alertController.presentOn(self)
         
     }
     @IBAction func showCustomAlertController(sender: AnyObject) {
@@ -102,36 +104,42 @@ class ViewController: UIViewController {
             title: "Custom alert with a very looooooong title",
             message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
             buttons: [
-                MIAlertController.Button(title: "Option 1"),
-                MIAlertController.Button(title: "Option 2"),
-                MIAlertController.Button(title: "Option 3")
+                MIAlertController.Button(title: "Option 1", action: {
+                    print("option one selected")
+                }),
+                MIAlertController.Button(title: "Option 2", action: {
+                    print("option two selected")
+                }),
+                MIAlertController.Button(title: "Option 3", action: {
+                    print("option three selected")
+                })
             ],
             config: customAlertControllerConfig
             
-            ).presentOn(self, buttonTapped: { (buttonIndex) in
-                
-                print("button \(buttonIndex) tapped")
-                
-            })
+            ).presentOn(self)
         
     }
     @IBAction func showGooglishAlertController(sender: AnyObject) {
         
-        MIAlertController(
-            
+        let alertController = MIAlertController(
             title: "I'm a googlish alert!",
             message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-            buttons: [
-                MIAlertController.Button(title: "COOL", config: googlishAlertControllerLeftButtonConfig),
-                MIAlertController.Button(title: "OK", config: googlishAlertControllerRightButtonConfig)
-            ],
             config: googlishAlertControllerConfig
-            
-            ).presentOn(self, buttonTapped: { (buttonIndex) in
-                
-                print("button \(buttonIndex) tapped")
-                
+        )
+        
+        alertController.addButton(
+            MIAlertController.Button(title: "COOL", config: googlishAlertControllerLeftButtonConfig, action: {
+                print("cool tapped")
             })
+        )
+        
+        alertController.addButton(
+            MIAlertController.Button(title: "OK", config: googlishAlertControllerRightButtonConfig, action: {
+                print("ok tapped")
+            })
+        )
+        
+        alertController.presentOn(self)
         
     }
 

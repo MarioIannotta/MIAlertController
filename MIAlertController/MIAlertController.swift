@@ -10,7 +10,7 @@ import UIKit
 
 class MIAlertController: UIViewController {
     
-    typealias ButtonTappedClosure = (buttonIndex: Int) -> ()
+    typealias ButtonTappedClosure = () -> ()
     
     struct Config {
         
@@ -63,7 +63,7 @@ class MIAlertController: UIViewController {
             case Destructive
             case Cancel
             
-            var config: Config {
+            private var config: Config {
                 
                 switch self {
                     
@@ -106,18 +106,20 @@ class MIAlertController: UIViewController {
             
         }
         
-        var type = Type.Default
-        var config: Config!
-        var title: String?
+        private var type = Type.Default
+        private var config: Config!
+        private var title: String?
+        private var action: ButtonTappedClosure?
         
-        init(title: String, type: Type = .Default, config: Config? = nil) {
+        init(title: String, type: Type = .Default, config: Config? = nil, action: ButtonTappedClosure? = nil) {
             
             self.title = title
             self.config = config ?? type.config
+            self.action = action
             
         }
         
-        func createUIButton() -> UIButton {
+        private func createUIButton() -> UIButton {
             
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: config.buttonHeight))
             
@@ -139,15 +141,17 @@ class MIAlertController: UIViewController {
         
     }
     
-    var config: Config!
+    private var config: Config!
     
-    var alertTitle: String?
-    var alertMessage: String?
-    var alertButtons: [Button]?
+    private var alertTitle: String?
+    private var alertMessage: String?
+    private var alertButtons: [Button]?
     
-    var buttonTappedClosure: ButtonTappedClosure?
+    private var buttonTappedClosures: [ButtonTappedClosure?]?
     
-    var isPresenting: Bool = false
+    private var isPresenting: Bool = false
+    
+    private var buttonsList: [UIButton]!
     
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
@@ -170,8 +174,6 @@ class MIAlertController: UIViewController {
     
     @IBOutlet var dismissOnTapGestureRecognizer: UITapGestureRecognizer!
     
-    var buttonsList: [UIButton]!
-    
     // MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -185,13 +187,28 @@ class MIAlertController: UIViewController {
         
         self.alertTitle = title
         self.alertMessage = message
-        self.alertButtons = buttons
+        self.buttonTappedClosures = [ButtonTappedClosure?]()
+        self.alertButtons = [Button]()
+        
+        if let buttons = buttons {
+            
+            for button in buttons {
+                addButton(button)
+            }
+            
+        }
         
     }
     
-    func presentOn(parentVC: UIViewController, buttonTapped: ButtonTappedClosure?) {
+    // MARK: - Public methods
+    func addButton(button: Button) {
         
-        buttonTappedClosure = buttonTapped
+        alertButtons?.append(button)
+        buttonTappedClosures?.append(button.action)
+        
+    }
+    
+    func presentOn(parentVC: UIViewController) {
         
         self.modalPresentationStyle = .OverCurrentContext
         self.transitioningDelegate = self
@@ -343,11 +360,10 @@ class MIAlertController: UIViewController {
         
         buttonsList = [UIButton]()
         
-        for (index, button) in buttons.enumerate() {
+        for button in buttons {
             
             let uiButton = button.createUIButton()
             
-            uiButton.tag = index + 1
             uiButton.addTarget(self, action: #selector(MIAlertController.buttonTapped(_:)), forControlEvents: .TouchUpInside)
             
             buttonsBackgroundView.addSubview(uiButton)
@@ -410,8 +426,11 @@ class MIAlertController: UIViewController {
     }
     
     @objc private func buttonTapped(button: UIButton) {
+        
+        if let buttonIndex = buttonsList.indexOf({ $0 == button }) {
+            self.buttonTappedClosures?[buttonIndex]?()
+        }
 
-        buttonTappedClosure?(buttonIndex: button.tag)
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -428,10 +447,6 @@ class MIAlertController: UIViewController {
         setupUI()
         setupBehavior()
 
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - IBActions
