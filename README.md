@@ -4,7 +4,7 @@ A simple fully customizable alert controller
 <img src="demo.gif" height="500"/>
 
 # Setup
-- Copy the "MIAlertController" folder to your project.
+- Add ```pod 'MIAlertController', '~> 1.0'``` to your Podfile or copy the "MIAlertController" folder to your project.
 - Create a new instance with just a line of code
 
 ```
