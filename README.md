@@ -3,7 +3,7 @@ A simple fully customizable alert controller
 
 [![Platform](http://img.shields.io/badge/platform-ios-red.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
-[![Swift 3.0](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) 
+[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) 
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/MIAlertController.svg)](https://img.shields.io/cocoapods/v/RSKCollectionViewRetractableFirstItemLayout.svg) 
 
 <img src="demo.gif" height="500"/>
