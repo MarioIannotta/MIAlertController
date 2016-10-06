@@ -5,6 +5,6 @@ use_frameworks!
 
 target 'MIAlertControllerDemo' do
 
-    pod 'MIAlertController', '~> 1.0'
+    pod 'MIAlertController', '~> 1.1'
 
 end
