@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC20401F1DB4CF7B005FAFFF /* MIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20401D1DB4CF7B005FAFFF /* MIAlertController.swift */; };
-		AC2040201DB4CF7B005FAFFF /* MIAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC20401E1DB4CF7B005FAFFF /* MIAlertController.xib */; };
+		9FE2B7B1D8752FC626D26522 /* Pods_MIAlertControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F396E2C7075C366F9EA48AB /* Pods_MIAlertControllerDemo.framework */; };
 		ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF21D33C9260034530E /* AppDelegate.swift */; };
 		ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE3BF41D33C9260034530E /* ViewController.swift */; };
 		ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE3BF61D33C9260034530E /* Main.storyboard */; };
@@ -17,8 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC20401D1DB4CF7B005FAFFF /* MIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIAlertController.swift; sourceTree = "<group>"; };
-		AC20401E1DB4CF7B005FAFFF /* MIAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIAlertController.xib; sourceTree = "<group>"; };
+		2F396E2C7075C366F9EA48AB /* Pods_MIAlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIAlertControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE3BEF1D33C9260034530E /* MIAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE3BF21D33C9260034530E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAE3BF41D33C9260034530E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +24,8 @@
 		ACAE3BF91D33C9260034530E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACAE3BFC1D33C9260034530E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACAE3BFE1D33C9260034530E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA437AC27BF8AF7D865E75E1 /* Pods-MIAlertControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIAlertControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MIAlertControllerDemo/Pods-MIAlertControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FB0ABBD5C15273502DE58F7D /* Pods-MIAlertControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIAlertControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MIAlertControllerDemo/Pods-MIAlertControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,27 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE2B7B1D8752FC626D26522 /* Pods_MIAlertControllerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC20401C1DB4CF7B005FAFFF /* MIAlertController */ = {
+		87DF8E9EE613B05298440ED1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC20401D1DB4CF7B005FAFFF /* MIAlertController.swift */,
-				AC20401E1DB4CF7B005FAFFF /* MIAlertController.xib */,
+				2F396E2C7075C366F9EA48AB /* Pods_MIAlertControllerDemo.framework */,
 			);
-			path = MIAlertController;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		ACAE3BE61D33C9260034530E = {
 			isa = PBXGroup;
 			children = (
-				AC20401C1DB4CF7B005FAFFF /* MIAlertController */,
 				ACAE3BF11D33C9260034530E /* MIAlertControllerDemo */,
 				ACAE3BF01D33C9260034530E /* Products */,
+				C71518F6450E53DFD09FBC09 /* Pods */,
+				87DF8E9EE613B05298440ED1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +79,15 @@
 			path = MIAlertControllerDemo;
 			sourceTree = "<group>";
 		};
+		C71518F6450E53DFD09FBC09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB0ABBD5C15273502DE58F7D /* Pods-MIAlertControllerDemo.debug.xcconfig */,
+				BA437AC27BF8AF7D865E75E1 /* Pods-MIAlertControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACAE3C011D33C9260034530E /* Build configuration list for PBXNativeTarget "MIAlertControllerDemo" */;
 			buildPhases = (
+				EB265F4E7CB4CE3295D1F3D4 /* [CP] Check Pods Manifest.lock */,
 				ACAE3BEB1D33C9260034530E /* Sources */,
 				ACAE3BEC1D33C9260034530E /* Frameworks */,
 				ACAE3BED1D33C9260034530E /* Resources */,
+				C00D5FA19514E4C545E8C114 /* [CP] Embed Pods Frameworks */,
+				8000C573665380B5D69B1F6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,7 +150,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2040201DB4CF7B005FAFFF /* MIAlertController.xib in Resources */,
 				ACAE3BFD1D33C9260034530E /* LaunchScreen.storyboard in Resources */,
 				ACAE3BFA1D33C9260034530E /* Assets.xcassets in Resources */,
 				ACAE3BF81D33C9260034530E /* Main.storyboard in Resources */,
@@ -146,12 +158,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8000C573665380B5D69B1F6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIAlertControllerDemo/Pods-MIAlertControllerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C00D5FA19514E4C545E8C114 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIAlertControllerDemo/Pods-MIAlertControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB265F4E7CB4CE3295D1F3D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACAE3BEB1D33C9260034530E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC20401F1DB4CF7B005FAFFF /* MIAlertController.swift in Sources */,
 				ACAE3BF51D33C9260034530E /* ViewController.swift in Sources */,
 				ACAE3BF31D33C9260034530E /* AppDelegate.swift in Sources */,
 			);
@@ -218,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -260,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -271,10 +330,12 @@
 		};
 		ACAE3C021D33C9260034530E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB0ABBD5C15273502DE58F7D /* Pods-MIAlertControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MIAlertControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marioiannotta.MIAlertControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,10 +345,12 @@
 		};
 		ACAE3C031D33C9260034530E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA437AC27BF8AF7D865E75E1 /* Pods-MIAlertControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MIAlertControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marioiannotta.MIAlertControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

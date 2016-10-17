@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIAlertController" customModule="MIAlertControllerDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="alertBackgroundView" destination="Fyt-Nc-m03" id="wBr-fA-Lc0"/>
+                <outlet property="alertViewBottomConstraint" destination="dGh-Ym-h6K" id="mf6-gm-86H"/>
+                <outlet property="alertViewHeightConstraint" destination="k47-Ag-MDZ" id="z2i-Q7-mwf"/>
+                <outlet property="alertViewLeadingConstraint" destination="qgT-BM-hXV" id="Xd5-w6-JNP"/>
+                <outlet property="alertViewTopConstraint" destination="aXv-QJ-2MO" id="Vha-Zv-SGW"/>
+                <outlet property="alertViewTrailingConstraint" destination="KPv-uU-96T" id="Lst-Gn-dUa"/>
+                <outlet property="alertViewWidthConstraint" destination="SJN-D0-BPt" id="XB1-Hf-NHQ"/>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="9AF-1Q-caD"/>
+                <outlet property="buttonsBackgroundView" destination="6OK-PS-4b3" id="dD4-lG-NsO"/>
+                <outlet property="buttonsBackgroundViewHeightConstraint" destination="dk0-My-wti" id="dCJ-p8-HEh"/>
+                <outlet property="dismissOnTapGestureRecognizer" destination="HyG-uA-fOK" id="GRB-kV-QFG"/>
+                <outlet property="messageLabel" destination="LFx-pT-DGA" id="wdW-Vd-dHV"/>
+                <outlet property="messageVerticalSpaceFromTitleConstraint" destination="0qh-5F-WHJ" id="yUU-gm-wQ3"/>
+                <outlet property="titleLabel" destination="YXh-Jm-pHP" id="aDb-6s-yDt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er6-b1-xhE">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="HyG-uA-fOK" appends="YES" id="Kb3-if-6KR"/>
+                    </connections>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-Nc-m03">
+                    <rect key="frame" x="151" y="160" width="298" height="280"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OK-PS-4b3">
+                            <rect key="frame" x="0.0" y="220" width="298" height="60"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="dk0-My-wti"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFx-pT-DGA">
+                            <rect key="frame" x="30" y="64" width="238" height="136"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXh-Jm-pHP">
+                            <rect key="frame" x="30" y="30" width="238" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="LFx-pT-DGA" firstAttribute="top" secondItem="YXh-Jm-pHP" secondAttribute="bottom" constant="10" id="0qh-5F-WHJ"/>
+                        <constraint firstAttribute="trailing" secondItem="YXh-Jm-pHP" secondAttribute="trailing" constant="30" id="1gm-Bl-9wm"/>
+                        <constraint firstItem="6OK-PS-4b3" firstAttribute="top" secondItem="LFx-pT-DGA" secondAttribute="bottom" constant="20" id="5ul-f2-CFa"/>
+                        <constraint firstAttribute="trailing" secondItem="6OK-PS-4b3" secondAttribute="trailing" id="E7J-7G-ljs"/>
+                        <constraint firstItem="YXh-Jm-pHP" firstAttribute="leading" secondItem="Fyt-Nc-m03" secondAttribute="leading" constant="30" id="LlU-zV-KIW"/>
+                        <constraint firstAttribute="bottom" secondItem="6OK-PS-4b3" secondAttribute="bottom" id="QUO-Ym-9BI"/>
+                        <constraint firstItem="6OK-PS-4b3" firstAttribute="leading" secondItem="Fyt-Nc-m03" secondAttribute="leading" id="R2z-Mr-Ojz"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="SJN-D0-BPt"/>
+                        <constraint firstAttribute="trailing" secondItem="LFx-pT-DGA" secondAttribute="trailing" constant="30" id="XyY-82-nc6"/>
+                        <constraint firstItem="LFx-pT-DGA" firstAttribute="leading" secondItem="Fyt-Nc-m03" secondAttribute="leading" constant="30" id="ioI-hr-6Wq"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="k47-Ag-MDZ"/>
+                        <constraint firstItem="YXh-Jm-pHP" firstAttribute="top" secondItem="Fyt-Nc-m03" secondAttribute="top" constant="30" id="qBJ-Wg-QPj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="er6-b1-xhE" secondAttribute="trailing" id="3MF-c0-nKl"/>
+                <constraint firstItem="Fyt-Nc-m03" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7g4-sj-e6M"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fyt-Nc-m03" secondAttribute="trailing" constant="30" id="KPv-uU-96T"/>
+                <constraint firstAttribute="bottom" secondItem="er6-b1-xhE" secondAttribute="bottom" id="SJw-IT-xRT"/>
+                <constraint firstItem="Fyt-Nc-m03" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W0s-Iw-5Uk"/>
+                <constraint firstItem="Fyt-Nc-m03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="aXv-QJ-2MO"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fyt-Nc-m03" secondAttribute="bottom" constant="160" id="dGh-Ym-h6K"/>
+                <constraint firstItem="er6-b1-xhE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gzV-xo-d6p"/>
+                <constraint firstItem="Fyt-Nc-m03" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="qgT-BM-hXV"/>
+                <constraint firstItem="er6-b1-xhE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="u5m-ca-SGO"/>
+            </constraints>
+            <point key="canvasLocation" x="319.5" y="411"/>
+        </view>
+        <tapGestureRecognizer id="HyG-uA-fOK">
+            <connections>
+                <action selector="dismissAction:" destination="-1" id="1e2-v8-8XD"/>
+                <outlet property="delegate" destination="dk0-My-wti" id="XAi-qN-bmS"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

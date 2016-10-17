@@ -1,0 +1,6 @@
+framework module MIAlertController {
+  umbrella header "MIAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}

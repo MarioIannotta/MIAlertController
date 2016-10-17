@@ -1,0 +1,12 @@
+PODS:
+  - MIAlertController (1.3)
+
+DEPENDENCIES:
+  - MIAlertController (~> 1.3)
+
+SPEC CHECKSUMS:
+  MIAlertController: 39277c0ea540fed8be1aba980ba076a0b49b1c22
+
+PODFILE CHECKSUM: 7340389191595f80dd70b1a652e2ddeb56e4829b
+
+COCOAPODS: 1.1.0.rc.3
