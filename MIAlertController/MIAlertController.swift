@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MIAlertController: UIViewController {
+open class MIAlertController: UIViewController {
     
     public typealias ButtonTappedClosure = () -> ()
     
@@ -21,25 +21,25 @@ public class MIAlertController: UIViewController {
         public var backgroundColor = UIColor(white: 0, alpha: 0.6)
         
         // Alert View
-        public var alertViewBackgroundColor = UIColor.whiteColor()
+        public var alertViewBackgroundColor = UIColor.white
         public var alertViewCornerRadius: CGFloat = 10
         public var alertMarginSize = CGSize(width: 40, height: 30)
-        public var separatorColor = UIColor.clearColor()
+        public var separatorColor = UIColor.clear
         public var alertViewMaxSize = CGSize(width: 300, height: 300)
         
         // Title
-        public var titleLabelFont = UIFont.boldSystemFontOfSize(19)
-        public var titleLabelTextColor = UIColor.blackColor()
-        public var titleLabelTextAlignment = NSTextAlignment.Center
+        public var titleLabelFont = UIFont.boldSystemFont(ofSize: 19)
+        public var titleLabelTextColor = UIColor.black
+        public var titleLabelTextAlignment = NSTextAlignment.center
         
         // Message
-        public var messageLabelFont = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
-        public var messageLabelTextColor = UIColor.blackColor()
-        public var messageLabelTextAlignment = NSTextAlignment.Center
+        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        public var messageLabelTextColor = UIColor.black
+        public var messageLabelTextAlignment = NSTextAlignment.center
         public var messageVerticalSpaceFromTitle: CGFloat = 10
         
         // Buttons
-        public var buttonBackgroundView = UIColor.whiteColor()
+        public var buttonBackgroundView = UIColor.white
         public var firstButtonRatio: CGFloat = 0.5 // Only available with two buttons; ratio between the width of the buttons container and the width of the first button
         
         public init() {
@@ -52,12 +52,12 @@ public class MIAlertController: UIViewController {
         
         public struct Config {
             
-            public var font = UIFont.boldSystemFontOfSize(15)
-            public var textColor = UIColor.blackColor()
-            public var textAlignment = UIControlContentHorizontalAlignment.Center
-            public var backgroundColor = UIColor.clearColor()
+            public var font = UIFont.boldSystemFont(ofSize: 15)
+            public var textColor = UIColor.black
+            public var textAlignment = UIControlContentHorizontalAlignment.center
+            public var backgroundColor = UIColor.clear
             public var buttonHeight: CGFloat = 60
-            public var contentEdgeOffset = UIEdgeInsetsZero
+            public var contentEdgeOffset = UIEdgeInsets.zero
             
             public init() {
                 
@@ -76,47 +76,47 @@ public class MIAlertController: UIViewController {
             
         }
         
-        public enum Type {
+        public enum `Type` {
 
-            case Default
-            case Destructive
-            case Cancel
+            case `default`
+            case destructive
+            case cancel
             
-            private var config: Config {
+            fileprivate var config: Config {
                 
                 switch self {
                     
-                case .Default:
+                case .default:
                     
                     return Config(
-                        font: UIFont.systemFontOfSize(16),
+                        font: UIFont.systemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .Center,
-                        backgroundColor: UIColor.clearColor(),
+                        textAlignment: .center,
+                        backgroundColor: UIColor.clear,
                         buttonHeight: 60,
-                        contentEdgeOffset: UIEdgeInsetsZero
+                        contentEdgeOffset: UIEdgeInsets.zero
                     )
                     
-                case .Destructive:
+                case .destructive:
                     
                     return Config(
-                        font: UIFont.boldSystemFontOfSize(16),
+                        font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 218/255.0, green: 75/255.0, blue: 56/255.0, alpha: 1),
-                        textAlignment: .Center,
-                        backgroundColor: UIColor.clearColor(),
+                        textAlignment: .center,
+                        backgroundColor: UIColor.clear,
                         buttonHeight: 60,
-                        contentEdgeOffset: UIEdgeInsetsZero
+                        contentEdgeOffset: UIEdgeInsets.zero
                     )
                     
-                case Cancel:
+                case .cancel:
                     
                     return Config(
-                        font: UIFont.boldSystemFontOfSize(16),
+                        font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .Center,
-                        backgroundColor: UIColor.clearColor(),
+                        textAlignment: .center,
+                        backgroundColor: UIColor.clear,
                         buttonHeight: 60,
-                        contentEdgeOffset: UIEdgeInsetsZero
+                        contentEdgeOffset: UIEdgeInsets.zero
                     )
                     
                 }
@@ -125,12 +125,12 @@ public class MIAlertController: UIViewController {
             
         }
         
-        private var type = Type.Default
-        private var config: Config!
-        private var title: String?
-        private var action: ButtonTappedClosure?
+        fileprivate var type = Type.default
+        fileprivate var config: Config!
+        fileprivate var title: String?
+        fileprivate var action: ButtonTappedClosure?
         
-        public init(title: String, type: Type = .Default, config: Config? = nil, action: ButtonTappedClosure? = nil) {
+        public init(title: String, type: Type = .default, config: Config? = nil, action: ButtonTappedClosure? = nil) {
             
             self.title = title
             self.config = config ?? type.config
@@ -138,14 +138,14 @@ public class MIAlertController: UIViewController {
             
         }
         
-        private func createUIButton() -> UIButton {
+        fileprivate func createUIButton() -> UIButton {
             
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: config.buttonHeight))
             
-            button.setTitle(title, forState: .Normal)
+            button.setTitle(title, for: UIControlState())
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.titleLabel?.minimumScaleFactor = 0.7
-            button.setTitleColor(config.textColor, forState: .Normal)
+            button.setTitleColor(config.textColor, for: UIControlState())
             button.titleLabel?.font = config.font
             button.backgroundColor = config.backgroundColor
             button.contentHorizontalAlignment = config.textAlignment
@@ -160,17 +160,17 @@ public class MIAlertController: UIViewController {
         
     }
     
-    private var config: Config!
+    fileprivate var config: Config!
     
-    private var alertTitle: String?
-    private var alertMessage: String?
-    private var alertButtons: [Button]?
+    fileprivate var alertTitle: String?
+    fileprivate var alertMessage: String?
+    fileprivate var alertButtons: [Button]?
     
-    private var buttonTappedClosures: [ButtonTappedClosure?]?
+    fileprivate var buttonTappedClosures: [ButtonTappedClosure?]?
     
-    private var isPresenting: Bool = false
+    fileprivate var isPresenting: Bool = false
     
-    private var buttonsList: [UIButton]!
+    fileprivate var buttonsList: [UIButton]!
     
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIView!
@@ -198,9 +198,9 @@ public class MIAlertController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init!(title: String? = nil, message: String? = nil, buttons: [Button]? = nil, config: Config? = nil) {
+    public init(title: String? = nil, message: String? = nil, buttons: [Button]? = nil, config: Config? = nil) {
         
-        super.init(nibName: "MIAlertController", bundle: NSBundle(forClass: MIAlertController.self))
+        super.init(nibName: "MIAlertController", bundle: Bundle(for: MIAlertController.self))
         
         self.config = config ?? Config()
         
@@ -220,24 +220,24 @@ public class MIAlertController: UIViewController {
     }
     
     // MARK: - Public methods
-    public func addButton(button: Button) {
+    open func addButton(_ button: Button) {
         
         alertButtons?.append(button)
         buttonTappedClosures?.append(button.action)
         
     }
     
-    public func presentOn(parentVC: UIViewController) {
+    open func presentOn(_ parentVC: UIViewController) {
         
-        self.modalPresentationStyle = .OverCurrentContext
+        self.modalPresentationStyle = .overCurrentContext
         self.transitioningDelegate = self
         
-        parentVC.presentViewController(self, animated: true) {}
+        parentVC.present(self, animated: true) {}
         
     }
     
     // MARK: - UI Setup
-    private func setupUI() {
+    fileprivate func setupUI() {
         
         setupAlertView()
         setupTitleLabelUI()
@@ -247,9 +247,9 @@ public class MIAlertController: UIViewController {
         
     }
     
-    private func setupAlertView() {
+    fileprivate func setupAlertView() {
         
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
         
         backgroundView.backgroundColor = config.backgroundColor
         
@@ -267,14 +267,14 @@ public class MIAlertController: UIViewController {
         alertViewHeightConstraint.constant = config.alertViewMaxSize.height
         
     }
-    private func setupTitleLabelUI() {
+    fileprivate func setupTitleLabelUI() {
         
         titleLabel.font = config.titleLabelFont
         titleLabel.textColor = config.titleLabelTextColor
         titleLabel.textAlignment = config.titleLabelTextAlignment
         
     }
-    private func setupMessageLabelUI() {
+    fileprivate func setupMessageLabelUI() {
         
         messageLabel.font = config.messageLabelFont
         messageLabel.textColor = config.messageLabelTextColor
@@ -283,7 +283,7 @@ public class MIAlertController: UIViewController {
         messageVerticalSpaceFromTitleConstraint.constant = config.messageVerticalSpaceFromTitle
         
     }
-    private func setupButtonsUI() {
+    fileprivate func setupButtonsUI() {
         
         if buttonsList.count == 0 {
             
@@ -297,10 +297,10 @@ public class MIAlertController: UIViewController {
             
             buttonsBackgroundView.addConstraints([
                 
-                NSLayoutConstraint(item: firstButton, attribute: .Leading, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Leading, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Top, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Top, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Bottom, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Bottom, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Width, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Width, multiplier: 1, constant: 0)
+                NSLayoutConstraint(item: firstButton, attribute: .leading, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .leading, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .top, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .bottom, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .width, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .width, multiplier: 1, constant: 0)
                 
                 ])
             
@@ -316,19 +316,19 @@ public class MIAlertController: UIViewController {
             
             buttonsBackgroundView.addConstraints([
                 
-                NSLayoutConstraint(item: firstButton, attribute: .Leading, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Leading, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Top, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Top, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Bottom, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Bottom, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: firstButton, attribute: .Width, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Width, multiplier: config.firstButtonRatio, constant: 0)
+                NSLayoutConstraint(item: firstButton, attribute: .leading, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .leading, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .top, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .bottom, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: firstButton, attribute: .width, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .width, multiplier: config.firstButtonRatio, constant: 0)
                 
                 ])
             
             buttonsBackgroundView.addConstraints([
                 
-                NSLayoutConstraint(item: secondButton, attribute: .Leading, relatedBy: .Equal, toItem: firstButton, attribute: .Trailing, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: secondButton, attribute: .Top, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Top, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: secondButton, attribute: .Bottom, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Bottom, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: secondButton, attribute: .Trailing, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Trailing, multiplier: 1, constant: 0)
+                NSLayoutConstraint(item: secondButton, attribute: .leading, relatedBy: .equal, toItem: firstButton, attribute: .trailing, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: secondButton, attribute: .top, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: secondButton, attribute: .bottom, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: secondButton, attribute: .trailing, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .trailing, multiplier: 1, constant: 0)
                 
                 ])
             
@@ -342,20 +342,20 @@ public class MIAlertController: UIViewController {
             
             buttonsBackgroundViewHeightConstraint.constant = menuTotalHeight
             
-            for (index, button) in buttonsList.enumerate() {
+            for (index, button) in buttonsList.enumerated() {
                 
                 addSeparatorTo(button, separators: (top: true, right: false))
                 
                 let firstLayoutConstraint = index == 0 ?
-                    NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Top, multiplier: 1, constant: 0) :
-                    NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: buttonsList[index - 1], attribute: .Bottom, multiplier: 1, constant: 0)
+                    NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .top, multiplier: 1, constant: 0) :
+                    NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: buttonsList[index - 1], attribute: .bottom, multiplier: 1, constant: 0)
                 
                 buttonsBackgroundView.addConstraints([
                     
                     firstLayoutConstraint,
-                    NSLayoutConstraint(item: button, attribute: .Leading, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Leading, multiplier: 1, constant: 0),
-                    NSLayoutConstraint(item: button, attribute: .Trailing, relatedBy: .Equal, toItem: buttonsBackgroundView, attribute: .Trailing, multiplier: 1, constant: 0),
-                    NSLayoutConstraint(item: button, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: button.frame.height)
+                    NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .leading, multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: buttonsBackgroundView, attribute: .trailing, multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: button.frame.height)
                     
                     ])
                 
@@ -366,7 +366,7 @@ public class MIAlertController: UIViewController {
     }
     
     // MARK: - Buttons stuff
-    private func createButtons(buttons: [Button]?) {
+    fileprivate func createButtons(_ buttons: [Button]?) {
      
         guard let buttons = buttons else { return }
         
@@ -376,7 +376,7 @@ public class MIAlertController: UIViewController {
             
             let uiButton = button.createUIButton()
             
-            uiButton.addTarget(self, action: #selector(MIAlertController.buttonTapped(_:)), forControlEvents: .TouchUpInside)
+            uiButton.addTarget(self, action: #selector(MIAlertController.buttonTapped(_:)), for: .touchUpInside)
             
             buttonsBackgroundView.addSubview(uiButton)
             
@@ -388,7 +388,7 @@ public class MIAlertController: UIViewController {
         
     }
     
-    private func addSeparatorTo(button: UIButton, separators: (top: Bool, right: Bool)) {
+    fileprivate func addSeparatorTo(_ button: UIButton, separators: (top: Bool, right: Bool)) {
         
         func addTopBorder() {
             
@@ -401,10 +401,10 @@ public class MIAlertController: UIViewController {
             button.addSubview(border)
             
             button.addConstraints([
-                NSLayoutConstraint(item: border, attribute: .Top, relatedBy: .Equal, toItem: button, attribute: .Top, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Leading, relatedBy: .Equal, toItem: button, attribute: .Leading, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Trailing, relatedBy: .Equal, toItem: button, attribute: .Trailing, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 1)
+                NSLayoutConstraint(item: border, attribute: .top, relatedBy: .equal, toItem: button, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .leading, relatedBy: .equal, toItem: button, attribute: .leading, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .trailing, relatedBy: .equal, toItem: button, attribute: .trailing, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1)
                 ])
             
         }
@@ -420,10 +420,10 @@ public class MIAlertController: UIViewController {
             border.translatesAutoresizingMaskIntoConstraints = false
             
             button.addConstraints([
-                NSLayoutConstraint(item: border, attribute: .Top, relatedBy: .Equal, toItem: button, attribute: .Top, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Bottom, relatedBy: .Equal, toItem: button, attribute: .Bottom, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Trailing, relatedBy: .Equal, toItem: button, attribute: .Trailing, multiplier: 1, constant: 0),
-                NSLayoutConstraint(item: border, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 1)
+                NSLayoutConstraint(item: border, attribute: .top, relatedBy: .equal, toItem: button, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .bottom, relatedBy: .equal, toItem: button, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .trailing, relatedBy: .equal, toItem: button, attribute: .trailing, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: border, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 1)
                 ])
             
         }
@@ -437,18 +437,18 @@ public class MIAlertController: UIViewController {
         
     }
     
-    @objc private func buttonTapped(button: UIButton) {
+    @objc fileprivate func buttonTapped(_ button: UIButton) {
         
-        if let buttonIndex = buttonsList.indexOf({ $0 == button }) {
+        if let buttonIndex = buttonsList.index(where: { $0 == button }) {
             self.buttonTappedClosures?[buttonIndex]?()
         }
 
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     
     // MARK: - Lifecycle
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = alertTitle
@@ -461,9 +461,9 @@ public class MIAlertController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func dismissAction(sender: AnyObject) {
+    @IBAction func dismissAction(_ sender: AnyObject) {
         if config.dismissOnTouchOutsideEnabled {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
 
@@ -473,14 +473,14 @@ public class MIAlertController: UIViewController {
 extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
     // UIViewControllerAnimatedTransitioning
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         self.isPresenting = true
         
         return self
         
     }
-    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         self.isPresenting = false
         
@@ -489,10 +489,10 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
     }
     
     // UIViewControllerTransitioningDelegate
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
-    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         if isPresenting {
             animatePresentationWithTransitionContext(transitionContext)
@@ -503,36 +503,37 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
     }
     
     // Shortcut
-    func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
+    func animatePresentationWithTransitionContext(_ transitionContext: UIViewControllerContextTransitioning) {
         
         guard
             
-            let presentedController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as? MIAlertController,
-            let presentedControllerView = transitionContext.viewForKey(UITransitionContextToViewKey),
-            let containerView = transitionContext.containerView()
+            let presentedController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? MIAlertController,
+            let presentedControllerView = transitionContext.view(forKey: UITransitionContextViewKey.to)
         
             else { return }
         
-        presentedControllerView.frame = transitionContext.finalFrameForViewController(presentedController)
+        let containerView = transitionContext.containerView
+        
+        presentedControllerView.frame = transitionContext.finalFrame(for: presentedController)
         
         presentedController.view.alpha = 0
         presentedController.alertBackgroundView.alpha = 0
         
-        presentedController.alertBackgroundView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        presentedController.alertBackgroundView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         
         containerView.addSubview(presentedControllerView)
         
-        UIView.animateWithDuration(
+        UIView.animate(
             
-            transitionDuration(transitionContext),
+            withDuration: transitionDuration(using: transitionContext),
             delay: 0.0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0.0,
-            options: .AllowUserInteraction,
+            options: .allowUserInteraction,
             
             animations: {
                 
-                presentedController.alertBackgroundView.transform = CGAffineTransformMakeScale(1, 1)
+                presentedController.alertBackgroundView.transform = CGAffineTransform(scaleX: 1, y: 1)
                 
                 presentedController.view.alpha = 1
                 presentedController.alertBackgroundView.alpha = 1
@@ -546,25 +547,24 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
         )
         
     }
-    func animateDismissalWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
+    func animateDismissalWithTransitionContext(_ transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let
-            
-            presentedController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? MIAlertController,
-            presentedControllerView = transitionContext.viewForKey(UITransitionContextFromViewKey)
+        guard
+            let presentedController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? MIAlertController,
+            let presentedControllerView = transitionContext.view(forKey: UITransitionContextViewKey.from)
             
             else { return }
 
-        UIView.animateWithDuration(
+        UIView.animate(
             
-            transitionDuration(transitionContext),
+            withDuration: transitionDuration(using: transitionContext),
             delay: 0.0,
             usingSpringWithDamping: 2,
             initialSpringVelocity: 0.0,
-            options: .AllowUserInteraction,
+            options: .allowUserInteraction,
             animations: {
                 
-                presentedController.alertBackgroundView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+                presentedController.alertBackgroundView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                 presentedControllerView.alpha = 0
                 
             }, completion: {(completed: Bool) -> Void in
