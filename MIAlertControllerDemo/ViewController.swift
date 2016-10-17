@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Private
-    private func loadConfigs() {
+    fileprivate func loadConfigs() {
         
         // Googlish alert
         googlishAlertControllerConfig = MIAlertController.Config()
@@ -39,36 +39,36 @@ class ViewController: UIViewController {
         googlishAlertControllerConfig.messageLabelTextColor = UIColor(white: 0.45, alpha: 1)
         
         googlishAlertControllerConfig.messageVerticalSpaceFromTitle = 25
-        googlishAlertControllerConfig.messageLabelFont = UIFont.systemFontOfSize(17)
+        googlishAlertControllerConfig.messageLabelFont = UIFont.systemFont(ofSize: 17)
         
         googlishAlertControllerConfig.alertMarginSize = CGSize(width: 10, height: 10)
-        googlishAlertControllerConfig.alertViewMaxSize = CGSize(width: UIScreen.mainScreen().bounds.size.width - 80, height: 340)
+        googlishAlertControllerConfig.alertViewMaxSize = CGSize(width: UIScreen.main.bounds.size.width - 80, height: 340)
         
-        googlishAlertControllerConfig.titleLabelTextAlignment = NSTextAlignment.Left
-        googlishAlertControllerConfig.messageLabelTextAlignment = NSTextAlignment.Left
+        googlishAlertControllerConfig.titleLabelTextAlignment = NSTextAlignment.left
+        googlishAlertControllerConfig.messageLabelTextAlignment = NSTextAlignment.left
         
         // Googlish alert actions
         googlishAlertControllerLeftButtonConfig = MIAlertController.Button.Config()
         
         googlishAlertControllerLeftButtonConfig.textColor = UIColor(red: 19/255.0, green: 152/255.0, blue: 138/255.0, alpha: 1)
-        googlishAlertControllerLeftButtonConfig.textAlignment = .Right
-        googlishAlertControllerLeftButtonConfig.font = UIFont.boldSystemFontOfSize(15)
+        googlishAlertControllerLeftButtonConfig.textAlignment = .right
+        googlishAlertControllerLeftButtonConfig.font = UIFont.boldSystemFont(ofSize: 15)
         
         googlishAlertControllerRightButtonConfig = MIAlertController.Button.Config()
         
         googlishAlertControllerRightButtonConfig.textColor = UIColor(red: 19/255.0, green: 152/255.0, blue: 138/255.0, alpha: 1)
-        googlishAlertControllerRightButtonConfig.font = UIFont.boldSystemFontOfSize(15)
+        googlishAlertControllerRightButtonConfig.font = UIFont.boldSystemFont(ofSize: 15)
         
         // Custom alert
         customAlertControllerConfig = MIAlertController.Config()
         
         customAlertControllerConfig.alertViewCornerRadius = 4
         
-        customAlertControllerConfig.titleLabelFont = UIFont.boldSystemFontOfSize(18)
-        customAlertControllerConfig.titleLabelTextAlignment = NSTextAlignment.Left
+        customAlertControllerConfig.titleLabelFont = UIFont.boldSystemFont(ofSize: 18)
+        customAlertControllerConfig.titleLabelTextAlignment = NSTextAlignment.left
         
         customAlertControllerConfig.messageLabelTextColor = UIColor(white: 0.3, alpha: 1)
-        customAlertControllerConfig.messageLabelTextAlignment = NSTextAlignment.Left
+        customAlertControllerConfig.messageLabelTextAlignment = NSTextAlignment.left
         
         customAlertControllerConfig.buttonBackgroundView = UIColor(white: 0.98, alpha: 1)
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
     }
     
     // Mark: - IBActions
-    @IBAction func showDefaultAlertController(sender: AnyObject) {
+    @IBAction func showDefaultAlertController(_ sender: AnyObject) {
         
         let alertController = MIAlertController(
             title: "I'm a default alert, am I cute?",
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         )
         
         alertController.addButton(
-            MIAlertController.Button(title: "Nope", type: .Destructive, action: {
+            MIAlertController.Button(title: "Nope", type: .destructive, action: {
                 print("nope tapped")
             })
         )
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         alertController.presentOn(self)
         
     }
-    @IBAction func showCustomAlertController(sender: AnyObject) {
+    @IBAction func showCustomAlertController(_ sender: AnyObject) {
         
         MIAlertController(
             
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
             ).presentOn(self)
         
     }
-    @IBAction func showGooglishAlertController(sender: AnyObject) {
+    @IBAction func showGooglishAlertController(_ sender: AnyObject) {
         
         let alertController = MIAlertController(
             title: "I'm a googlish alert!",
