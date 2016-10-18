@@ -4,12 +4,14 @@ A simple fully customizable alert controller
 [![Platform](http://img.shields.io/badge/platform-ios-red.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
 [![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) 
+[![Swift 3](https://img.shields.io/badge/Swift-3-orange.svg?style=flat)](https://developer.apple.com/swift/) 
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/MIAlertController.svg)](https://img.shields.io/cocoapods/v/RSKCollectionViewRetractableFirstItemLayout.svg) 
 
 <img src="demo.gif" height="500"/>
 
 # Setup
-- Add ```pod 'MIAlertController', '~> 1.0'``` to your Podfile or copy the "MIAlertController" folder to your project.
+- Add ```pod 'MIAlertController', '~> 1.3'``` to your Podfile if you're using Swift 3 or copy the "MIAlertController" folder into your project from the master branch
+- Add ```pod 'MIAlertController', '~> 1.1'``` to your Podfile if you're using Swift 2.2 7 or copy the "MIAlertController" folder into your project from the "swift2.2" branch
 - Create a new instance with just a line of code
 
 ```
