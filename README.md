@@ -24,7 +24,7 @@ MIAlertController(
       print("button one tapped")
     }),
     MIAlertController.Button(title: "Button two", action: {
-      print("button two apped
+      print("button two apped")
     })
   ]
 
