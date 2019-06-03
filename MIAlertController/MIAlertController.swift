@@ -33,7 +33,7 @@ open class MIAlertController: UIViewController {
         public var titleLabelTextAlignment = NSTextAlignment.center
         
         // Message
-        public var messageLabelFont = UIFont.systemFont(ofSize: 16)
+        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
         public var messageLabelTextColor = UIColor.black
         public var messageLabelTextAlignment = NSTextAlignment.center
         public var messageVerticalSpaceFromTitle: CGFloat = 10
@@ -54,7 +54,7 @@ open class MIAlertController: UIViewController {
             
             public var font = UIFont.boldSystemFont(ofSize: 15)
             public var textColor = UIColor.black
-            public var textAlignment = UIControlContentHorizontalAlignment.center
+            public var textAlignment = UIControl.ContentHorizontalAlignment.center
             public var backgroundColor = UIColor.clear
             public var buttonHeight: CGFloat = 60
             public var contentEdgeOffset = UIEdgeInsets.zero
@@ -63,7 +63,7 @@ open class MIAlertController: UIViewController {
                 
             }
             
-            public init(font: UIFont, textColor: UIColor, textAlignment: UIControlContentHorizontalAlignment, backgroundColor: UIColor, buttonHeight: CGFloat, contentEdgeOffset: UIEdgeInsets) {
+            public init(font: UIFont, textColor: UIColor, textAlignment: UIControl.ContentHorizontalAlignment, backgroundColor: UIColor, buttonHeight: CGFloat, contentEdgeOffset: UIEdgeInsets) {
                 
                 self.font = font
                 self.textColor = textColor
@@ -77,7 +77,7 @@ open class MIAlertController: UIViewController {
         }
         
         public enum `Type` {
-
+            
             case `default`
             case destructive
             case cancel
@@ -91,7 +91,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.systemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -102,7 +102,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 218/255.0, green: 75/255.0, blue: 56/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -113,7 +113,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -142,10 +142,10 @@ open class MIAlertController: UIViewController {
             
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: config.buttonHeight))
             
-            button.setTitle(title, for: UIControlState())
+            button.setTitle(title, for: UIControl.State())
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.titleLabel?.minimumScaleFactor = 0.7
-            button.setTitleColor(config.textColor, for: UIControlState())
+            button.setTitleColor(config.textColor, for: UIControl.State())
             button.titleLabel?.font = config.font
             button.backgroundColor = config.backgroundColor
             button.contentHorizontalAlignment = config.textAlignment
@@ -197,7 +197,7 @@ open class MIAlertController: UIViewController {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     public init(title: String? = nil, message: String? = nil, buttons: [Button]? = nil, config: Config? = nil) {
         
         super.init(nibName: "MIAlertController", bundle: Bundle(for: MIAlertController.self))
@@ -367,7 +367,7 @@ open class MIAlertController: UIViewController {
     
     // MARK: - Buttons stuff
     fileprivate func createButtons(_ buttons: [Button]?) {
-     
+        
         guard let buttons = buttons else { return }
         
         buttonsList = [UIButton]()
@@ -383,7 +383,7 @@ open class MIAlertController: UIViewController {
             buttonsList.append(uiButton)
             
         }
-
+        
         setupButtonsUI()
         
     }
@@ -439,10 +439,10 @@ open class MIAlertController: UIViewController {
     
     @objc fileprivate func buttonTapped(_ button: UIButton) {
         
-        if let buttonIndex = buttonsList.index(where: { $0 == button }) {
+        if let buttonIndex = buttonsList.firstIndex(where: { $0 == button }) {
             self.buttonTappedClosures?[buttonIndex]?()
         }
-
+        
         dismiss(animated: true, completion: nil)
         
     }
@@ -457,7 +457,7 @@ open class MIAlertController: UIViewController {
         createButtons(alertButtons)
         
         setupUI()
-
+        
     }
     
     // MARK: - IBActions
@@ -466,7 +466,7 @@ open class MIAlertController: UIViewController {
             dismiss(animated: true, completion: nil)
         }
     }
-
+    
 }
 
 // MARK: - CustomTransition stuff
@@ -509,7 +509,7 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
             
             let presentedController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? MIAlertController,
             let presentedControllerView = transitionContext.view(forKey: UITransitionContextViewKey.to)
-        
+            
             else { return }
         
         let containerView = transitionContext.containerView
@@ -538,11 +538,11 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
                 presentedController.view.alpha = 1
                 presentedController.alertBackgroundView.alpha = 1
                 
-            }, completion: {(completed: Bool) -> Void in
-                
-                transitionContext.completeTransition(completed)
-                
-            }
+        }, completion: {(completed: Bool) -> Void in
+            
+            transitionContext.completeTransition(completed)
+            
+        }
             
         )
         
@@ -554,7 +554,7 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
             let presentedControllerView = transitionContext.view(forKey: UITransitionContextViewKey.from)
             
             else { return }
-
+        
         UIView.animate(
             
             withDuration: transitionDuration(using: transitionContext),
@@ -567,11 +567,11 @@ extension MIAlertController: UIViewControllerAnimatedTransitioning, UIViewContro
                 presentedController.alertBackgroundView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                 presentedControllerView.alpha = 0
                 
-            }, completion: {(completed: Bool) -> Void in
-                
-                transitionContext.completeTransition(completed)
-                
-            }
+        }, completion: {(completed: Bool) -> Void in
+            
+            transitionContext.completeTransition(completed)
+            
+        }
             
         )
         
