@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'MIAlertController'
-  spec.version          = '1.3'
+  spec.version          = '1.4'
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
   spec.homepage         = 'https://github.com/MarioIannotta/MIAlertController'
   spec.authors          = { 'Mario Iannotta' => 'info@marioiannotta.com' }
