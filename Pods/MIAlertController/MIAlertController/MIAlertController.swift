@@ -33,7 +33,7 @@ open class MIAlertController: UIViewController {
         public var titleLabelTextAlignment = NSTextAlignment.center
         
         // Message
-        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
         public var messageLabelTextColor = UIColor.black
         public var messageLabelTextAlignment = NSTextAlignment.center
         public var messageVerticalSpaceFromTitle: CGFloat = 10
@@ -54,7 +54,7 @@ open class MIAlertController: UIViewController {
             
             public var font = UIFont.boldSystemFont(ofSize: 15)
             public var textColor = UIColor.black
-            public var textAlignment = UIControlContentHorizontalAlignment.center
+            public var textAlignment = UIControl.ContentHorizontalAlignment.center
             public var backgroundColor = UIColor.clear
             public var buttonHeight: CGFloat = 60
             public var contentEdgeOffset = UIEdgeInsets.zero
@@ -63,7 +63,7 @@ open class MIAlertController: UIViewController {
                 
             }
             
-            public init(font: UIFont, textColor: UIColor, textAlignment: UIControlContentHorizontalAlignment, backgroundColor: UIColor, buttonHeight: CGFloat, contentEdgeOffset: UIEdgeInsets) {
+            public init(font: UIFont, textColor: UIColor, textAlignment: UIControl.ContentHorizontalAlignment, backgroundColor: UIColor, buttonHeight: CGFloat, contentEdgeOffset: UIEdgeInsets) {
                 
                 self.font = font
                 self.textColor = textColor
@@ -91,7 +91,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.systemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -102,7 +102,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 218/255.0, green: 75/255.0, blue: 56/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -113,7 +113,7 @@ open class MIAlertController: UIViewController {
                     return Config(
                         font: UIFont.boldSystemFont(ofSize: 16),
                         textColor: UIColor(red: 33/255.0, green: 129/255.0, blue: 247/255.0, alpha: 1),
-                        textAlignment: .center,
+                        textAlignment: UIControl.ContentHorizontalAlignment.center,
                         backgroundColor: UIColor.clear,
                         buttonHeight: 60,
                         contentEdgeOffset: UIEdgeInsets.zero
@@ -142,10 +142,10 @@ open class MIAlertController: UIViewController {
             
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: config.buttonHeight))
             
-            button.setTitle(title, for: UIControlState())
+            button.setTitle(title, for: UIControl.State())
             button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.titleLabel?.minimumScaleFactor = 0.7
-            button.setTitleColor(config.textColor, for: UIControlState())
+            button.setTitleColor(config.textColor, for: UIControl.State())
             button.titleLabel?.font = config.font
             button.backgroundColor = config.backgroundColor
             button.contentHorizontalAlignment = config.textAlignment
@@ -439,7 +439,7 @@ open class MIAlertController: UIViewController {
     
     @objc fileprivate func buttonTapped(_ button: UIButton) {
         
-        if let buttonIndex = buttonsList.index(where: { $0 == button }) {
+        if let buttonIndex = buttonsList.firstIndex(where: { $0 == button }) {
             self.buttonTappedClosures?[buttonIndex]?()
         }
 
