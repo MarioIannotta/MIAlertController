@@ -33,7 +33,7 @@ open class MIAlertController: UIViewController {
         public var titleLabelTextAlignment = NSTextAlignment.center
         
         // Message
-        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+        public var messageLabelFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
         public var messageLabelTextColor = UIColor.black
         public var messageLabelTextAlignment = NSTextAlignment.center
         public var messageVerticalSpaceFromTitle: CGFloat = 10
